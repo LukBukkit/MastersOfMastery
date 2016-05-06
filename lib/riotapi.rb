@@ -1,5 +1,7 @@
 module RiotAPI
 
+  load "#{Rails.root}/lib/riotapi/static_data.rb"
+
   private
   def self.do_riot_request(method)
     url = "https://euw.api.pvp.net/#{method}"
@@ -7,7 +9,8 @@ module RiotAPI
       res = RestClient.get(url, :params => {:api_key => ENV['RIOT_API_KEY']})
       MultiJson.load(res.to_s)
     rescue => e
-      puts 'RestError: ' + e.response
+      #puts 'RestError: ' + e.response
+      puts 'RestError: ' + e.class.name
       return nil
     end
   end
