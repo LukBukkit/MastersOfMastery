@@ -1,1 +1,10 @@
-<%= @stuff %>
+<%= render 'index/header' %>
+<div id="chheader">
+  <%= image_tag riot_champion_icon @champion %>
+  <h1><%= riot_champion_name @champion %></h1>
+</div>
+<div id="chcontent">
+  <ul>
+    <li><%= fa_icon 'trophy 4x', text: '' %></li>
+  </ul>
+</div>

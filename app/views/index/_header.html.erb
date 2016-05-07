@@ -2,6 +2,7 @@
   <h1>Masters of Mastery</h1>
   <nav>
     <ul>
+      <li><%= link_to (fa_icon 'home', text: 'Home'), {:controller => :index, :action => :show}%></li>
       <li><a href="#" data-turbolinks="false" id="searchi"><%= fa_icon 'search', text: 'Search for Champion' %></a></li>
       <li><a href="#" data-turbolinks="false" id="abouti"><%= fa_icon 'info-circle', text: 'About' %></a></li>
     </ul>

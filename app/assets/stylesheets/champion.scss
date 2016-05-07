@@ -1,3 +1,29 @@
 // Place all the styles related to the champion controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chheader {
+  height: 120px;
+  margin-left: 2.5%;
+}
+
+#chheader img {
+  float: left;
+}
+
+#chheader h1 {
+  position: relative;
+  left: 20px;
+  top: 23px;
+  font-size: 3em;
+  display: inline;
+}
+
+#chcontent ul {
+  list-style: none;
+}
+
+#chcontent li {
+  margin-left: 0;
+  display: inline-block;
+}

@@ -1,8 +1,16 @@
 module RiotHelper
   load "#{Rails.root}/lib/riotapi.rb"
 
+  def riot_champion_icon(name)
+    RiotAPI::StaticData.get_champ_icon(name)
+  end
+
   def riot_champion_icon_id(id)
     RiotAPI::StaticData.get_champ_icon_id(id)
+  end
+
+  def riot_champion_name(name)
+    RiotAPI::StaticData.get_champion_by_name(name)['name']
   end
 
   def riot_champion_name_id(id)
@@ -13,7 +21,7 @@ module RiotHelper
     RiotAPI::StaticData.get_champion_hash_name_by_id(id)
   end
 
-  def link_to_champion(id, css_classes = '')
+  def link_to_champion_id(id, css_classes = '')
     link_to riot_champion_name_id(id),
             {:controller => :champion,
              :action => :show,
