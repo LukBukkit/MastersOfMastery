@@ -54,7 +54,12 @@ module MasteriesUpdater
     summoners.each_value do |value|
       user = ::QueriedUser.new(:leagueid => value.id, :name => value.name, :elo => value.tier)
       user.save
-      masteries = RiotAPI.get_championmastery_all_champs(value.id)
+      begin
+        masteries = RiotAPI.get_championmastery_all_champs(value.id)
+      rescue
+        next
+      end
+      if masteries == nil then next end
       masteries.each do |mastery|
         sqlmastery = ::ChampionMasterie.new(
             :champion => mastery['championId'],
@@ -66,7 +71,7 @@ module MasteriesUpdater
     end
   end
 
-  def self.lastestUpdate
-
+  def self.lastest_update
+    @last_updated
   end
 end

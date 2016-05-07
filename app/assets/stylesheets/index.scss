@@ -2,10 +2,161 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 header h1 {
   font-weight: bold;
   text-align: center;
+  font-size: 2em;
+}
+
+header > nav {
+  text-align: center;
+}
+
+header ul {
+  font-size: 1.25em;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+header li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color:rgb(230, 126, 34);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(230, 126, 34);
+  text-decoration: none;
+}
+
+header > nav a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+header > nav a:hover {
+  transition: all 0.5s;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.51);
+}
+
+header > nav a:link {
+  color: black;
+  text-decoration: none;
+}
+
+header > nav a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#aboutdiv {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  background: rgb(255,255,255);
+  box-shadow: 0 0 50px rgb(0,0,0);
+  padding: 40px;
+  border-radius: 25px;
+  z-index: 999;
+}
+
+#aboutdiv > #close {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#aboutcontent {
+  overflow: auto;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.hiddenDis {
+  display: none;
+}
+
+#popwrapper {
+  text-align: center;
+}
+
+.first3champs {
+  display: inline-block;
+  position: relative;
+  margin-top: 60px;
+}
+
+#champ1 {
+  top: -60px;
+  border: 5px solid gold;
+  animation: champ1fadein 2s ease;
+}
+
+@keyframes champ1fadein {
+  0% {top: 0;}
+  100% {top: -60px;}
+}
+
+#champ2 {
+  top: -30px;
+  border: 5px solid silver;
+  animation: champ2fadein 2s ease;
+}
+
+@keyframes champ2fadein {
+  0% {top: 0;}
+  100% {top: -30px;}
+}
+
+#champ3 {
+  top: -15px;
+  border: 5px solid rgb(205, 127, 50);
+  animation: champ3fadein 2s ease;
+}
+
+@keyframes champ3fadein {
+  0% {top: 0;}
+  100% {top: -15px;}
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#tablewrapper {
+  text-align: center;
+}
+
+#tablewrapper > table {
+  display: inline-block;
+}
+
+#tablewrapper th {
+  padding: 0 5px;
+}
+
+.hovertext {
+  position: fixed;
+  padding: 2px 4px;
+  background: rgba(52, 152, 219,1.0);
+  box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.51);
 }
