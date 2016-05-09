@@ -13,10 +13,13 @@ The mastery points will be combined and visualized beautifully.
 
 * Before you start the application for the first time or if some gems are missing, use `bin/bundle install`.
 
-* To setup the database just run the command `rake db:migrate RAILS_ENV="production"`
+* To setup the database just run the command `bin/rake db:migrate RAILS_ENV="production"`
 
 * You'll have to pass 2 keys using the environment variables. The first is `SECRET_KEY_BASE` and second is the `RIOT_API_KEY`.
 The `SECRET_KEY_BASE` is just a long string for encrypting the the sessions. The `RIOT_API_KEY` is your API-Key.
+
+* The server needs data to display the page. You can fetch the data for the first time with `bin/rake riot_tasks:championpoints_task RAILS_ENV="production"`.
+The server will automaticly fetch all 15 minutes. It's important that you set the the variable `RIOT_API_KEY` before!
 
 * When you set the variables and configured the database, you can
 start the server with `bin/rails server -p [YOUR PORT] -e production`.

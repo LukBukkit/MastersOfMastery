@@ -7,6 +7,7 @@
         <%= link_to_champion_id(mastery.champion, 'bold') %><br/>
         <span class="hover" data-hover-text="Collected Points"><%= short_number mastery.sumpoints %><br/></span>
         <span class="hover" data-hover-text="Average Level"><%= mastery.avglvl.round(2) %><br/></span>
+
       </div>
   <% end %>
 </div>
@@ -26,7 +27,7 @@
     <tbody>
     <% @masteries.each_with_index do |mastery, index| %>
         <tr>
-          <td><%= index %></td>
+          <td><%= index + 1 %></td>
           <td><%= link_to_champion_id(mastery.champion) %></td>
           <td><%= short_number mastery.sumpoints %></td>
           <td><%= short_number mastery.avgpoints %></td>
