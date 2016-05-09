@@ -19,7 +19,7 @@ module NumbersHelper
       calc = (number / 1000.0).round(1)
       "#{calc} K"
     else
-      number
+      number.round(0)
     end
   end
 end
